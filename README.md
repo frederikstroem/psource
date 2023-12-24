@@ -31,7 +31,7 @@ The tool is created to quickly provide source code context to a large language m
         }
         ```
     ```
-- Add video/gif demo to README.md
+- [ ] Add video/gif demo to README.md
 
 ## Install
 ## Install using Cargo
