@@ -11,7 +11,8 @@ The tool is created to quickly provide source code context to a large language m
 - [x] Skip binary files
 - [x] Configuration file entry to toggle direct output to clipboard by default
 - [x] Add `cargo build` CI/CD
-- [ ] Publish to crates.io
+- [x] Publish to crates.io
+- [ ] Add [shields](https://shields.io/) to README.md
 - [ ] Add CI/CD to publish to crates.io
 - [ ] Publish package to the AUR
 - [ ] Add CI/CD to publish package to the AUR
