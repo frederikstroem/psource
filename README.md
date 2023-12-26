@@ -1,9 +1,21 @@
+<div align="center">
+
+
 # psource
 **p**rint **source** code
 
 CLI tool to pretty print source code to stdout or directly to the clipboard.
 
 The tool is created to quickly provide source code context to a large language model (LLM).
+
+[![crates.io version](https://img.shields.io/crates/v/psource)](https://crates.io/crates/psource)
+[![crates.io downloads](https://img.shields.io/crates/d/psource)](https://crates.io/crates/psource)
+[![crates.io license](https://img.shields.io/crates/l/psource)](https://crates.io/crates/psource)
+
+[![build and test](https://img.shields.io/github/actions/workflow/status/frederikstroem/psource/build_and_test.yml?label=build%20and%20test)](https://github.com/frederikstroem/psource/actions/workflows/build_and_test.yml)
+[![docs.rs](https://img.shields.io/docsrs/psource)](https://docs.rs/psource)
+
+</div>
 
 ## Roadmap
 - [x] Print to stdout
