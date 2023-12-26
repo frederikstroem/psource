@@ -17,55 +17,44 @@ The tool is created to quickly provide source code context to a large language m
 
 </div>
 
-## Roadmap
-- [x] Print to stdout
-- [x] Copy to clipboard
-- [x] Skip binary files
-- [x] Configuration file entry to toggle direct output to clipboard by default
-- [x] Add `cargo build` CI/CD
-- [x] Publish to crates.io
-- [ ] Add [shields](https://shields.io/) to README.md
-- [ ] Add CI/CD to publish to crates.io
-- [ ] Publish package to the AUR
-- [ ] Add CI/CD to publish package to the AUR
-- [ ] Include only files matching a regex
-- [ ] Exclude files matching a regex
-- [ ] Add tests
-- [ ] Add `cargo test` CI/CD
-- [ ] Make async
-- [ ] Ability to omit comments in output
-- [ ] Add option to print as markdown fenced code blocks, e.g.:
+---
 
-    ```markdown
-        **src/main.rs:**
-        ```rust
-        fn main() {
-            println!("Hello, world!");
-        }
-        ```
-    ```
-- [ ] Add video/gif demo to README.md
+⚠️ This tool is still in early development, expect breaking changes.
+
+⏳️ See [CHANGELOG.md](CHANGELOG.md) for the latest changes and [roadmap](CHANGELOG.md#Unreleased).
+
+---
 
 ## Install
-## Install using Cargo
+### Install using Cargo
 Make sure to have Cargo installed and PATH configured. See [The Rust Programming Language - Installing Binaries with cargo install](https://doc.rust-lang.org/book/ch14-04-installing-binaries.html).
 
-### Install from crates.io
+#### Install from crates.io
 ```bash
 cargo install psource
 ```
 
-### Install from GitHub source
+#### Install from GitHub source
 ```bash
 cargo install --git https://github.com/frederikstroem/psource.git
 ```
 
-### Install from local source
+#### Install from local source
 ```bash
 cargo install --path .
 ```
 
-## Quick start
+## Configuration
+The tool can be configured using a configuration file. The configuration file is a simple TOML file with the following structure:
+
+```toml
+# Copy the source code to the clipboard instead of printing it to stdout (default: false)
+clipboard_is_default_output_target = false
+```
+
+psource will look for a configuration file in the following `$HOME/.config/psource/config.toml`.
+
+## Get started
 Get help:
 ```plaintext
 psource --help
@@ -83,17 +72,7 @@ Options:
   -V, --version  Print version
 ```
 
-## Configuration
-The tool can be configured using a configuration file. The configuration file is a simple TOML file with the following structure:
-
-```toml
-# Copy the source code to the clipboard instead of printing it to stdout (default: false)
-clipboard_is_default_output_target = false
-```
-
-psource will look for a configuration file in the following `$HOME/.config/psource/config.toml`.
-
-## Example: Add a to_uppercase utils function to a Rust project
+### Example: Add a to_uppercase utils function to a Rust project
 We have created a simple Rust project with a `lib.rs` file and a `main.rs` file.
 
 **main.rs:**
@@ -164,5 +143,7 @@ The LLM should be able to help you complete the task.
 
 **Tip:** A file tree structure can sometimes help the LLM to better understand the context of the code. For such a task, I recommend using [eza](https://github.com/eza-community/eza) with the `--tree` option. To pipe it to the clipboard, a tool like [xsel](https://github.com/kfish/xsel) can be used, e.g., `eza --tree | xsel -b`.
 
-## Speeding up the copy to clipboard process
+
+## Known issues
+### Speeding up the copy to clipboard process
 Due to a bug in the software supply chain, the `-c` option requires psource to wait for some time before exiting, else the clipboard will not be updated on some systems (discovered on KDE Plasma running X11).[[1]](https://github.com/1Password/arboard/issues/114)[[2]](https://github.com/sigoden/aichat/issues/160) To speed up the process, the `psource` stdout can be piped to a clipboard tool like [xsel](https://github.com/kfish/xsel), e.g., `psource src | xsel -b`.

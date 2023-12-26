@@ -1,22 +1,33 @@
-name: Build and test
+name: 🛠️ Build and Test
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "*" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "*" ]
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
-
+  build_and_test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build
+    - name: 📥 Checkout code
+      uses: actions/checkout@v3
+
+    - name: 🗃️ Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+    - name: 🔨 Build
       run: cargo build --verbose
-    - name: Run tests
+
+    - name: 🧪 Run tests
       run: cargo test --verbose
