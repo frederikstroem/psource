@@ -1,0 +1,29 @@
+name: 🚀 Publish Crate
+
+on:
+  workflow_run:
+    workflows: ["Build and Test"]
+    types:
+      - completed
+    branches: [ main ]
+
+jobs:
+  publish_crate:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v3
+
+    - name: 📦 Publish to crates.io
+      uses: katyo/publish-crates@v2
+      id: publish-crates
+      with:
+        registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+
+    - name: 📢 Print output if psource published
+      if: fromJSON(steps.publish-crates.outputs.published).*
+      run: |
+        LIST="${{ join(fromJSON(steps.publish-crates.outputs.published).*.name, ', ') }}"
+        echo "Published crates: $LIST"

@@ -7,7 +7,55 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - 2023-12-24
+- Publish package to the AUR
+- Add CI/CD to publish package to the AUR
+- Include only files matching a regex
+- Exclude files matching a regex
+- Add tests
+- Add `cargo test` CI/CD
+- Make async
+- Ability to omit comments in output
+- Add option to print as markdown fenced code blocks, e.g.:
+
+    ```markdown
+        **src/main.rs:**
+        ```rust
+        fn main() {
+            println!("Hello, world!");
+        }
+        ```
+    ```
+- Add video/gif demo to README.md
+
+## [v0.1.2] - 2023-12-26
+
+### Added
+
+- Add CI/CD to publish to crates.io
+- Cache to build and test CI/CD workflow.
+
+### Changed
+
+- Updated roadmap in `README.md`.
+
+### Fixed
+
+- Missing entry in `CHANGELOG.md` for `v0.1.1`.
+- Changelog formatting.
+
+## [v0.1.1] - 2023-12-26
+
+### Added
+
+- Shields for version, downloads, license, build status, and docs to `README.md`.
+
+### Changed
+
+- Renamed GitHub workflow file from `rust.yml` to `build_and_test.yml` and updated its name from "Rust" to "Build and test".
+- Updated roadmap in `README.md`.
+- Updated package version in `Cargo.toml` to `0.1.1`.
+
+## [v0.1.0] - 2023-12-24
 
 ### Added
 
@@ -19,6 +67,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Proper handling of binary files to skip them during the print process.
 - Basic file walking to process directories and multiple files.
 - Setup of a basic CI/CD pipeline for `cargo build`.
+
+## [TEMPLATE] - YYYY-MM-DD
+
+### Added
+
+- N/A
 
 ### Changed
 
