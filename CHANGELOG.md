@@ -27,6 +27,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     ```
 - Add video/gif demo to README.md
 
+## [v0.1.3] - 2023-12-26
+
+### Fixed
+
+- Fix publish to crates.io workflow.
+
 ## [v0.1.2] - 2023-12-26
 
 ### Added
