@@ -23,7 +23,7 @@ jobs:
         echo "::set-output name=version::$VERSION"
 
     - name: 🚚 Publish AUR package
-      uses: frederikstroem/github-actions-deploy-aur@v2.8.1
+      uses: frederikstroem/github-actions-deploy-aur@v2.9.0
       with:
         pkgname: psource-git
         pkgbuild: ./PKGBUILD
