@@ -30,6 +30,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     ```
 - Add video/gif demo to README.md
 
+## [v0.1.5] - 2023-12-28
+
+### Fixed
+
+- Missing entry in `CHANGELOG.md` for `v0.1.4`.
+- Fixed AUR publish workflow.
+
 ## [v0.1.4] - 2023-12-28
 
 ### Added
@@ -41,6 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated badges in `README.md`.
+- Rename GitHub workflow from `publish.yml` to `cargo_publish.yml`.
 
 ## [v0.1.3] - 2023-12-26
 
