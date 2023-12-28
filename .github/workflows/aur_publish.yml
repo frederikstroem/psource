@@ -23,12 +23,11 @@ jobs:
         echo "::set-output name=version::$VERSION"
 
     - name: 🚚 Publish AUR package
-      uses: KSXGitHub/github-actions-deploy-aur@master
+      uses: frederikstroem/github-actions-deploy-aur@v2.8.1
       with:
         pkgname: psource-git
         pkgbuild: ./PKGBUILD
-        test: true
-        test_flags: '--clean'
+        update_pkgver: true
         commit_username: ${{ secrets.AUR_USERNAME }}
         commit_email: ${{ secrets.AUR_EMAIL }}
         ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
