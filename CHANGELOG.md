@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Publish package to the AUR
-- Add CI/CD to publish package to the AUR
+- Add merge CI/CD to verify Git tags, Cargo.toml version, CHANGELOG.md version and PKGBUILD version
+- Add printing of pathing relative to current Git directory (if applicable)
+- Add printing of pathing including current dir.
+- Add printing of pathing relative to home directory (if applicable)
+- Add printing of pathing relative to root directory
 - Include only files matching a regex
 - Exclude files matching a regex
 - Add tests
@@ -26,6 +29,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
         ```
     ```
 - Add video/gif demo to README.md
+
+## [v0.1.4] - 2023-12-28
+
+### Added
+
+- Publish package to the AUR.
+- Add CI/CD to publish package to the AUR.
+- Added AUR install instructions to `README.md`.
+
+### Changed
+
+- Updated badges in `README.md`.
 
 ## [v0.1.3] - 2023-12-26
 
