@@ -66,16 +66,17 @@ Get help:
 psource --help
 CLI tool to pretty print source code to stdout or directly to the clipboard. Skips binary files.
 
-Usage: psource [OPTIONS] [INPUT]...
+Usage: psource [OPTIONS] <INPUT>...
 
 Arguments:
-  [INPUT]...  Input files and directories
+  <INPUT>...  Input files and directories
 
 Options:
-  -s, --stdout   Print the source code to stdout
-  -c, --copy     Copy the source code to the clipboard
-  -h, --help     Print help
-  -V, --version  Print version
+  -s, --stdout               Print the source code to stdout
+  -c, --copy                 Copy the source code to the clipboard
+  -a, --ancestry <ANCESTRY>  Display the file's ancestry in the output path by including the specified number of parent directories relative to the current working directory, or 0 to omit the ancestry [default: 1]
+  -h, --help                 Print help
+  -V, --version              Print version
 ```
 
 ### Example: Add a to_uppercase utils function to a Rust project
@@ -107,7 +108,7 @@ psource -c src
 
 This command will place the following content onto your clipboard:
 ```plaintext
-⚫ simple_rust_program/src/main.rs
+⚫ /simple_rust_program/src/main.rs
 mod lib;
 
 fn main() {
@@ -115,7 +116,7 @@ fn main() {
     println!("{}", message);
 }
 
-⚫ simple_rust_program/src/lib.rs
+⚫ /simple_rust_program/src/lib.rs
 pub fn greet(name: &str) -> String {
     format!("Hello, {}!", name)
 }
@@ -128,7 +129,7 @@ Please add a to_uppercase function to a new utils.rs file. Modify the greet func
 
 Source code:
 
-⚫ simple_rust_program/src/main.rs
+⚫ /simple_rust_program/src/main.rs
 mod lib;
 
 fn main() {
@@ -136,7 +137,7 @@ fn main() {
     println!("{}", message);
 }
 
-⚫ simple_rust_program/src/lib.rs
+⚫ /simple_rust_program/src/lib.rs
 pub fn greet(name: &str) -> String {
     format!("Hello, {}!", name)
 }
