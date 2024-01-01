@@ -30,6 +30,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     ```
 - Add video/gif demo to README.md
 
+## [v0.2.0] - 2024-01-01
+
+### Added
+- New CLI option `--ancestry <ANCESTRY>` to display the file's ancestry in the output path by including the specified number of parent directories relative to the current working directory, or 0 to omit the ancestry.
+
+### Changed
+- Updated the help message and usage instructions in the `README.md` to reflect the new `--ancestry` option.
+
+### Removed
+- Simplified the verification logic in `Config::new` by removing the redundant `verify_cli` function since clap already handles the conflict between `--stdout` and `--copy`.
+
+### Fixed
+- Conflict checks between `--stdout` and `--copy` flags in the CLI arguments.
+
 ## [v0.1.7] - 2023-12-28
 
 ### Fixed

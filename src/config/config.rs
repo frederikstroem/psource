@@ -13,8 +13,6 @@ pub struct Config {
 
 impl Config {
     pub fn new(cli: &Cli) -> anyhow::Result<Self> {
-        Self::verify_cli(&cli)?;
-
         let config_file = Self::get_config_file()?;
 
         let output_target = if cli.stdout {
@@ -30,14 +28,6 @@ impl Config {
                 output_target,
             }
         )
-    }
-
-    fn verify_cli(cli: &Cli) -> anyhow::Result<()> {
-        if cli.stdout && cli.copy {
-            return Err(anyhow::anyhow!("Cannot use both --stdout and --copy at the same time."));
-        }
-
-        Ok(())
     }
 
     fn get_config_file() -> anyhow::Result<config::Config> {
