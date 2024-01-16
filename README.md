@@ -63,7 +63,7 @@ psource will look for a configuration file in the following `$HOME/.config/psour
 ## Get started
 Get help:
 ```plaintext
-psource --help
+$ psource --help
 CLI tool to pretty print source code to stdout or directly to the clipboard. Skips binary files.
 
 Usage: psource [OPTIONS] <INPUT>...
@@ -75,6 +75,7 @@ Options:
   -s, --stdout               Print the source code to stdout
   -c, --copy                 Copy the source code to the clipboard
   -a, --ancestry <ANCESTRY>  Display the file's ancestry in the output path by including the specified number of parent directories relative to the current working directory, or 0 to omit the ancestry [default: 1]
+  -g, --git-ancestry         Display the file's ancestry in the output path, including parent directories from the current working directory within a Git repository to its root, unlike the fixed number specified by the 'ancestry' option
   -h, --help                 Print help
   -V, --version              Print version
 ```
