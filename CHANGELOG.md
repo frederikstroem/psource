@@ -29,6 +29,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add video/gif demo to README.md
 - Improve code quality and structure
 
+## [v0.3.1] - 2024-01-16
+
+### Fixed
+- Fixed `psource --help` output in `README.md`.
+
 ## [v0.3.0] - 2024-01-16
 
 ### Added

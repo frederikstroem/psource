@@ -1,6 +1,6 @@
 [package]
 name = "psource"
-version = "0.3.0"
+version = "0.3.1"
 authors = ["Frederik Holm Strøm <crates.io@frederikstroem.com>"]
 description = "CLI tool to pretty print source code to stdout or directly to the clipboard."
 edition = "2021"
