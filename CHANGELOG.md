@@ -8,8 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Add merge CI/CD to verify Git tags, Cargo.toml version, CHANGELOG.md version and PKGBUILD version
-- Add printing of pathing relative to current Git directory (if applicable)
-- Add printing of pathing including current dir.
 - Add printing of pathing relative to home directory (if applicable)
 - Add printing of pathing relative to root directory
 - Include only files matching a regex
@@ -29,6 +27,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
         ```
     ```
 - Add video/gif demo to README.md
+- Improve code quality and structure
+
+## [v0.3.0] - 2024-01-16
+
+### Added
+- Git ancestry feature to display the file's ancestry within a Git repository.
+- Added Dependency on `git2` crate to support Git.
+- Added "Improve code quality and structure" to the roadmap in `CHANGELOG.md`.
+
+### Changed
+- Updated `clap` dependency.
+
+### Removed
+- Removed TODO items from the Unreleased section that have been implemented in this release.
 
 ## [v0.2.0] - 2024-01-01
 

@@ -1,6 +1,6 @@
 [package]
 name = "psource"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Frederik Holm Strøm <crates.io@frederikstroem.com>"]
 description = "CLI tool to pretty print source code to stdout or directly to the clipboard."
 edition = "2021"
@@ -13,9 +13,10 @@ exclude = [".github", ".vscode"]
 
 [dependencies]
 anyhow = "1.0"
-clap = { version = "4.4.11", features = ["derive"] }
+clap = { version = "4.4", features = ["derive"] }
 dirs = "5.0.1"
 config = { version = "0.13.4", features = ["toml"] }
 walkdir = "2.4.0"
 arboard = "3.3.0"
 file-format = "0.23.0"
+git2 = "0.18"
