@@ -20,13 +20,9 @@ pub struct Cli {
     #[arg(short, long = "git-ancestry", conflicts_with = "ancestry")]
     pub git_ancestry: bool,
 
-    // /// Exclude files matching the given regex
-    // #[arg(short, long)]
-    // pub exclude: Option<String>,
-
-    // /// Include only files matching the given regex
-    // #[arg(short, long)]
-    // pub include: Option<String>,
+    /// Exclude files and directories matching the specified glob pattern
+    #[arg(short, long, action = clap::ArgAction::Append)]
+    pub exclude: Vec<String>,
 
     /// Input files and directories
     #[arg(required = true)]

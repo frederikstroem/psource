@@ -10,8 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add merge CI/CD to verify Git tags, Cargo.toml version, CHANGELOG.md version and PKGBUILD version
 - Add printing of pathing relative to home directory (if applicable)
 - Add printing of pathing relative to root directory
-- Include only files matching a regex
-- Exclude files matching a regex
+- Exclude files matching a glob pattern
 - Add tests
 - Add `cargo test` CI/CD
 - Make async
@@ -28,6 +27,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     ```
 - Add video/gif demo to README.md
 - Improve code quality and structure
+
+## [v0.4.0] - 2024-01-26
+
+### Added
+- Support for excluding files and directories matching specified glob patterns with the new `-e` or `--exclude` option.
+- Clarification on the usage of glob patterns as part of the known issues in `README.md`.
+
+### Fixed
+- Prevention of repeated prints of the same file by incorporating a HashSet to track already processed files in the `FileWalker`.
+
+### Changed
+- Updated the `psource --help` output in `README.md` to reflect the new `-e` or `--exclude` option.
+- Updated the Unreleased section in `CHANGELOG.md` to reflect the new `-e` or `--exclude` option.
 
 ## [v0.3.1] - 2024-01-16
 
