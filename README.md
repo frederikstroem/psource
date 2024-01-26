@@ -76,6 +76,7 @@ Options:
   -c, --copy                 Copy the source code to the clipboard
   -a, --ancestry <ANCESTRY>  Display the file's ancestry in the output path by including the specified number of parent directories relative to the current working directory, or 0 to omit the ancestry [default: 1]
   -g, --git-ancestry         Display the file's ancestry in the output path, including parent directories from the current working directory within a Git repository to its root, unlike the fixed number specified by the 'ancestry' option
+  -e, --exclude <EXCLUDE>    Exclude files and directories matching the specified glob pattern
   -h, --help                 Print help
   -V, --version              Print version
 ```
@@ -151,7 +152,13 @@ The LLM should be able to help you complete the task.
 
 **Tip:** A file tree structure can sometimes help the LLM to better understand the context of the code. For such a task, I recommend using [eza](https://github.com/eza-community/eza) with the `--tree` option. To pipe it to the clipboard, a tool like [xsel](https://github.com/kfish/xsel) can be used, e.g., `eza --tree | xsel -b`.
 
-
 ## Known issues
 ### Speeding up the copy to clipboard process
 Due to a bug in the software supply chain, the `-c` option requires psource to wait for some time before exiting, else the clipboard will not be updated on some systems (discovered on KDE Plasma running X11).[[1]](https://github.com/1Password/arboard/issues/114)[[2]](https://github.com/sigoden/aichat/issues/160) To speed up the process, the `psource` stdout can be piped to a clipboard tool like [xsel](https://github.com/kfish/xsel), e.g., `psource src | xsel -b`.
+
+### Exclude option not working
+The exclude option has some rough edges right now and future improvements are planned.
+
+If the `*` exclude patterns are not working as excepted, try to quote the pattern, e.g., `psource Cargo.toml README.md -e 'Cargo*'`
+
+If you need to exclude a file within a subdirectory, consider using a glob pattern such as `psource src -e '*/main.rs'` to target `main.rs` in any immediate subdirectory, or `psource src -e '**/main.rs'` to match all `main.rs` files across all levels of subdirectories.

@@ -22,7 +22,7 @@ impl<'a> Printer<'a> {
             Self {
                 cli,
                 config,
-                file_walker: FileWalker::new(),
+                file_walker: FileWalker::new(cli.exclude.clone()),
             }
         )
     }
