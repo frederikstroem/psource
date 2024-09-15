@@ -28,6 +28,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add video/gif demo to README.md
 - Improve code quality and structure
 
+## [v0.4.1] - 2024-09-15
+
+### Added
+- Added Renovate configuration file `renovate.json`.
+
+### Changed
+- Updated dependencies:
+  - `clap` to `4.5`
+  - `config` to `0.14`
+  - `walkdir` to `2.5`
+  - `arboard` to `3.4`
+  - `git2` to `0.19`
+- Updated GitHub actions cache to `actions/cache@v4`.
+- Updated GitHub actions checkout to `actions/checkout@v4`.
+- Updated GitHub workflows to use `frederikstroem/publish-crates@v2` for publishing to crates.io.
+
 ## [v0.4.0] - 2024-01-26
 
 ### Added
