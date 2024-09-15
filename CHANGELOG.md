@@ -28,6 +28,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add video/gif demo to README.md
 - Improve code quality and structure
 
+## [v0.4.2] - 2024-09-15
+
+### Changed
+- Updated GitHub action for AUR publishing to use `frederikstroem/github-actions-deploy-aur@v3.1.0`.
+
 ## [v0.4.1] - 2024-09-15
 
 ### Added

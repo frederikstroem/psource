@@ -23,7 +23,7 @@ jobs:
         echo "::set-output name=version::$VERSION"
 
     - name: 🚚 Publish AUR package
-      uses: frederikstroem/github-actions-deploy-aur@v2.9.0
+      uses: frederikstroem/github-actions-deploy-aur@v3.1.0
       with:
         pkgname: psource-git
         pkgbuild: ./PKGBUILD
@@ -32,4 +32,4 @@ jobs:
         commit_email: ${{ secrets.AUR_EMAIL }}
         ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
         commit_message: 'Bump psource to version v${{ steps.cargo_metadata.outputs.version }}'
-        ssh_keyscan_types: rsa,dsa,ecdsa,ed25519
+        ssh_keyscan_types: rsa,ecdsa,ed25519
