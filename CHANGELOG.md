@@ -28,6 +28,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add video/gif demo to README.md
 - Improve code quality and structure
 
+## [v0.4.3] - 2024-09-15
+
+### Fixed
+- Updated `PKGBUILD` to fix build failure by adding `options=(!lto)`.
+
 ## [v0.4.2] - 2024-09-15
 
 ### Changed
